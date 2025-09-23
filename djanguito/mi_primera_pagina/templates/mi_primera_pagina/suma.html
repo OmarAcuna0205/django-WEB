@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Suma</title>
+</head>
+<body>
+	<h1>Resultado de la suma</h1>
+	{% if a is not None and b is not None and resultado is not None %}
+		<p>La suma de {{ a }} + {{ b }} es = {{ resultado }}</p>
+	{% else %}
+		<p>No se proporcionaron los valores para la suma.</p>
+	{% endif %}
+</body>
+</html>

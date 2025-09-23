@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Vista original
-def index(request):
+def index1(request):
     return HttpResponse("Hello, World!")
 
 # Vista con operación matemática (ejemplo: suma)
@@ -19,6 +19,9 @@ def saludo_html(request):
         "mensaje": "Bienvenido a tu primera página en Django 🚀"
     }
     return render(request, "saludo.html", contexto)
+
+def index(request):
+    return render(request, "mi_primera_pagina/index.html")
 
 def saludo (request, nombre):
     return render(request, "mi_primera_pagina/saludo.html",

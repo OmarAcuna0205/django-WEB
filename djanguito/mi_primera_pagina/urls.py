@@ -5,5 +5,5 @@ urlpatterns = [
     path('', views.index, name='index'),             
     path('suma/', views.suma, name='suma'),           
     path('saludo/', views.saludo_html, name='saludohtml'), 
-    path('saludo/<str:nombre>/', views.saludo, name='Saludo'),
+    path('<str:nombre>', views.saludo, name='saludo'),
 ]

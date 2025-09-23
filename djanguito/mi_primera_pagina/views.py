@@ -19,3 +19,7 @@ def saludo_html(request):
         "mensaje": "Bienvenido a tu primera página en Django 🚀"
     }
     return render(request, "saludo.html", contexto)
+
+def saludo (request, nombre):
+    return render(request, "mi_primera_pagina/saludo.html",
+                  {"nombre": nombre.capitalize()})

@@ -23,6 +23,9 @@ def saludo_html(request):
 def index(request):
     return render(request, "mi_primera_pagina/index.html")
 
+def about(request):
+    return render(request, "mi_primera_pagina/about.html")
+
 def saludo (request, nombre):
     return render(request, "mi_primera_pagina/saludo.html",
                   {"nombre": nombre.capitalize()})

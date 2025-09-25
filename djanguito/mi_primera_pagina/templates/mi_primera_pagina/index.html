@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Index</title>
-</head>
-<body>
-	<h1>Index</h1>
-	<p>This is a simple Django web page created as an example.</p>
-</body>
-</html>
+{% extends 'mi_primera_pagina/html/base.html' %}
+
+{% block content %}
+	<h1 class="mb-4">Bienvenido a mi primera página con Django y Bootstrap</h1>
+	<p class="lead">Esta es una página de ejemplo utilizando Django y el framework CSS Bootstrap para un diseño responsivo y moderno.</p>
+	<button class="btn btn-primary mt-3">Haz clic aquí</button>
+{% endblock %}

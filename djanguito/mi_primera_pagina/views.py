@@ -42,3 +42,6 @@ def tasks_admin_list (request):
     return render(request, "mi_primera_pagina/tasks_admin_list.html", {
         "tasks": tasks
     })
+
+def index2 (request):
+    return render(request, "mi_primera_pagina/index2.html")

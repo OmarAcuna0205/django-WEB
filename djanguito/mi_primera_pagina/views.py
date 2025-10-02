@@ -25,7 +25,7 @@ def suma (request, a, b):
 
 def tasks_index (request):
     tasks = Task.objects.all() 
-    return render(request, "task_index.html", {
+    return render(request, "mi_primera_pagina/tasks_index.html", {
         "tasks": tasks
     })
 
@@ -35,13 +35,13 @@ def tasks_add(request):
         if task:
             tasks.append(task) 
         return HttpResponseRedirect(reverse("tasks_index"))
-    return render(request, "tasks_add.html")
+    return render(request, "mi_primera_pagina/tasks_add.html")
 
 def tasks_admin_list (request):
     tasks = Task.objects.all().order_by("created_at")
-    return render(request, "tasks_admin_list.html", {
+    return render(request, "mi_primera_pagina/tasks_admin_list.html", {
         "tasks": tasks
     })
 
-def index2 (request):
-    return render(request, "index2.html")
+def index2 (request): 
+    return render(request, "mi_primera_pagina/index2.html")

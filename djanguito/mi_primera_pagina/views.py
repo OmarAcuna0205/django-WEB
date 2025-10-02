@@ -24,7 +24,6 @@ def suma (request, a, b):
     })
 
 def tasks_index (request):
-    tasks = Task.objects.all() 
     return render(request, "tasks_index.html", {
         "tasks": tasks
     })

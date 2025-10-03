@@ -38,16 +38,16 @@
     <div class="main-content">
         <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top glass-effect">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Omarcini</a>
+                <a class="navbar-brand" href="{% url 'index' %}">Omarcini</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Suma</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Saludo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'suma' 10 20 %}">Suma (Ejemplo)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'saludo' 'Amigo' %}">Saludo (Ejemplo)</a></li>
                     </ul>
                     <div class="ms-auto d-flex align-items-center">
                         <span id="theme-toggler" class="theme-toggler text-warning">
@@ -90,12 +90,12 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
     
     <script>
+        // SCRIPT (sin cambios)
         document.addEventListener('DOMContentLoaded', async () => {
             const themeToggler = document.getElementById('theme-toggler');
             const htmlElement = document.documentElement;
             const moonIcon = themeToggler.querySelector('.bi-moon-stars-fill');
             const sunIcon = themeToggler.querySelector('.bi-sun-fill');
-            // CAMBIO 2: Seleccionamos el navbar
             const mainNavbar = document.getElementById('mainNavbar'); 
 
             const particlesConfigLight = { fpsLimit: 120, interactivity: { events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, }, modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 }, }, }, particles: { color: { value: "#212529" }, links: { color: "#212529", distance: 150, enable: true, opacity: 0.4, width: 1 }, move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 2, straight: false, }, number: { density: { enable: true }, value: 80 }, opacity: { value: 0.5 }, shape: { type: "circle" }, size: { value: { min: 1, max: 4 } }, }, detectRetina: true, };
@@ -113,13 +113,11 @@
                 if (theme === 'dark') {
                     moonIcon.classList.add('d-none');
                     sunIcon.classList.remove('d-none');
-                    // CAMBIO 3: Añadimos la clase para texto claro y quitamos la de texto oscuro
                     mainNavbar.classList.add('navbar-dark');
                     mainNavbar.classList.remove('navbar-light');
                 } else {
                     moonIcon.classList.remove('d-none');
                     sunIcon.classList.add('d-none');
-                    // CAMBIO 4: Añadimos la clase para texto oscuro y quitamos la de texto claro
                     mainNavbar.classList.add('navbar-light');
                     mainNavbar.classList.remove('navbar-dark');
                 }

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ESTILOS (sin cambios) */
+        /* ESTILOS */
         #tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         :root { --page-bg: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); --bg-glass: rgba(255, 255, 255, 0.35); --border-glass: rgba(255, 255, 255, 0.5); --text-color: #212529; --shadow-color: rgba(0, 0, 0, 0.1); --link-hover-color: #0d6efd; }
         [data-bs-theme="dark"] { --page-bg: linear-gradient(120deg, #0f2027 0%, #203a43 50%, #2c5364 100%); --bg-glass: rgba(0, 0, 0, 0.25); --border-glass: rgba(255, 255, 255, 0.1); --text-color: #f0f0f0; --shadow-color: rgba(0, 0, 0, 0.5); --link-hover-color: #58a6ff; }
@@ -26,7 +26,8 @@
         .nav-link:hover { transform: translateY(-2px); color: var(--link-hover-color) !important; }
         .theme-toggler { cursor: pointer; font-size: 1.25rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .theme-toggler:hover { transform: scale(1.2) rotate(360deg); }
-        .footer { padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid var(--border-glass); }
+        /* ========= FOOTER MÁS CHICO AQUÍ ========= */
+        .footer { padding: 1.5rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid var(--border-glass); }
         .social-icons a { color: var(--text-color); font-size: 1.8rem; margin: 0 15px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block; }
         .social-icons a:hover { transform: translateY(-10px) scale(1.1); color: var(--link-hover-color); }
     </style>
@@ -38,7 +39,7 @@
     <div class="main-content">
         <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top glass-effect">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'index' %}">Omarcini</a>
+                <a class="navbar-brand" href="{% url 'index' %}">OMAR DEV</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -48,7 +49,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'suma' 10 20 %}">Suma (Ejemplo)</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'saludo' 'Amigo' %}">Saludo (Ejemplo)</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'index2' %}">Menú de Tareas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'tasks_menu' %}">Menú de Tareas</a></li>
                     </ul>
                     <div class="ms-auto d-flex align-items-center">
                         <span id="theme-toggler" class="theme-toggler text-warning">
@@ -78,12 +79,10 @@
         <footer class="footer glass-effect">
             <div class="container">
                 <div class="social-icons mb-3">
-                    <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/OmarAcuna0205" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 </div>
-                <h5 class="mb-1">Omar Dev</h5> {# Nombre del footer #}
-                <p class="mb-0">Omar Industries Student looking for greatness</p> {# Slogan #}
-                <p class="mt-2 mb-0">&copy; 2025 Todos los derechos reservados.</p>
+                <p class="mb-0">Student looking for greatness© 2025 Todos los derechos reservados.</p>
             </div>
         </footer>
     </div>

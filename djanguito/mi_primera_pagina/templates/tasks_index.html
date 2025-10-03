@@ -6,7 +6,7 @@
         <h1 class="mb-4 text-center">My Tasks</h1>
         <ul class="list-group list-group-flush">
             {% for task in tasks %}
-                <li class="list-group-item bg-transparent">{{ task }}</li>
+                <li class="list-group-item bg-transparent text-center">{{ task }}</li>
             {% empty %}
                 <li class="list-group-item text-muted text-center bg-transparent">No tasks yet</li>
             {% endfor %}

@@ -9,9 +9,11 @@
             <div class="mb-3">
                 <input type="text" name="task" placeholder="Describe tu nueva tarea..." class="form-control form-control-lg bg-transparent">
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-between">
-                <a href="{% url 'tasks_index' %}" class="btn btn-secondary">← Ver Tareas</a>
-                <button type="submit" class="btn btn-success">Agregar Tarea</button>
+            <div class="text-center mt-4">
+                <div class="btn-group" role="group">
+                    <a href="{% url 'tasks_index' %}" class="btn btn-secondary">← Ver Tareas</a>
+                    <button type="submit" class="btn btn-success">Agregar Tarea</button>
+                </div>
             </div>
         </form>
     </div>

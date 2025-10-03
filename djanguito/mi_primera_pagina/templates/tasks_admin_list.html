@@ -6,9 +6,9 @@
         <h1 class="text-center mb-4">Task Admin List</h1>
         <ul class="list-group list-group-flush">
             {% for task in tasks %}
-            <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+            <li class="list-group-item bg-transparent text-center">
                 {{ task.title }}
-                <span class="badge bg-secondary rounded-pill">{{ task.created_at|date:"d M, Y" }}</span>
+                <span class="badge bg-secondary rounded-pill ms-2">{{ task.created_at|date:"d M, Y" }}</span>
             </li>
             {% empty %}
             <li class="list-group-item bg-transparent text-muted text-center">No tasks created in admin</li>

@@ -6,132 +6,37 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- ESTILOS VISUALES AVANZADOS (CORREGIDOS) --- */
-        
-        #tsparticles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        :root {
-            /* MODO CLARO */
-            --page-bg: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-            --bg-glass: rgba(255, 255, 255, 0.35);
-            --border-glass: rgba(255, 255, 255, 0.5);
-            --text-color: #212529;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --link-hover-color: #0d6efd;
-        }
-
-        [data-bs-theme="dark"] {
-            /* MODO OSCURO */
-            --page-bg: linear-gradient(120deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            --bg-glass: rgba(0, 0, 0, 0.25);
-            --border-glass: rgba(255, 255, 255, 0.1);
-            --text-color: #f0f0f0;
-            --shadow-color: rgba(0, 0, 0, 0.5);
-            --link-hover-color: #58a6ff;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            /* AHORA USAMOS EL GRADIENTE DINÁMICO */
-            background: var(--page-bg);
-            background-attachment: fixed; /* Mantiene el gradiente fijo al hacer scroll */
-            color: var(--text-color);
-            overflow-x: hidden;
-            transition: background 2s ease; /* Transición suave para el gradiente */
-        }
-        
-        .main-content {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content-wrapper {
-            flex-grow: 1;
-        }
-
-        .glass-effect {
-            background: var(--bg-glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--border-glass);
-            box-shadow: 0 8px 32px 0 var(--shadow-color);
-            transition: background 0.3s ease, border 0.3s ease;
-        }
-
-        .navbar.glass-effect {
-            border: none;
-            border-bottom: 1px solid var(--border-glass);
-            box-shadow: none;
-        }
-
-        .card.glass-effect {
-            border-radius: 16px;
-        }
-
-        .card-title, .card-text {
-            color: var(--text-color);
-            text-shadow: 0 0 5px var(--shadow-color);
-        }
-        
-        .nav-link {
-            transition: color 0.2s ease-in-out, transform 0.2s ease;
-        }
-        .nav-link:hover {
-            transform: translateY(-2px);
-            color: var(--link-hover-color) !important;
-        }
-        
-        .theme-toggler {
-            cursor: pointer;
-            font-size: 1.25rem;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .theme-toggler:hover {
-            transform: scale(1.2) rotate(360deg);
-        }
-
-        .footer {
-            padding: 2rem 0;
-            margin-top: 4rem;
-            text-align: center;
-            border-top: 1px solid var(--border-glass);
-        }
-        
-        .social-icons a {
-            color: var(--text-color);
-            font-size: 1.8rem;
-            margin: 0 15px;
-            transition: transform 0.3s ease, color 0.3s ease;
-            display: inline-block;
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-10px) scale(1.1);
-            color: var(--link-hover-color);
-        }
+        /* ESTILOS (sin cambios) */
+        #tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        :root { --page-bg: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); --bg-glass: rgba(255, 255, 255, 0.35); --border-glass: rgba(255, 255, 255, 0.5); --text-color: #212529; --shadow-color: rgba(0, 0, 0, 0.1); --link-hover-color: #0d6efd; }
+        [data-bs-theme="dark"] { --page-bg: linear-gradient(120deg, #0f2027 0%, #203a43 50%, #2c5364 100%); --bg-glass: rgba(0, 0, 0, 0.25); --border-glass: rgba(255, 255, 255, 0.1); --text-color: #f0f0f0; --shadow-color: rgba(0, 0, 0, 0.5); --link-hover-color: #58a6ff; }
+        body { font-family: 'Poppins', sans-serif; background: var(--page-bg); background-attachment: fixed; color: var(--text-color); overflow-x: hidden; transition: background 2s ease; }
+        .main-content { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+        .content-wrapper { flex-grow: 1; }
+        .glass-effect { background: var(--bg-glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid var(--border-glass); box-shadow: 0 8px 32px 0 var(--shadow-color); transition: background 0.3s ease, border 0.3s ease; }
+        .navbar.glass-effect { border: none; border-bottom: 1px solid var(--border-glass); box-shadow: none; }
+        .card.glass-effect { border-radius: 16px; }
+        .card-title, .card-text { color: var(--text-color); text-shadow: 0 0 5px var(--shadow-color); }
+        .nav-link { transition: color 0.2s ease-in-out, transform 0.2s ease; }
+        .nav-link:hover { transform: translateY(-2px); color: var(--link-hover-color) !important; }
+        .theme-toggler { cursor: pointer; font-size: 1.25rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .theme-toggler:hover { transform: scale(1.2) rotate(360deg); }
+        .footer { padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid var(--border-glass); }
+        .social-icons a { color: var(--text-color); font-size: 1.8rem; margin: 0 15px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block; }
+        .social-icons a:hover { transform: translateY(-10px) scale(1.1); color: var(--link-hover-color); }
     </style>
 </head>
 <body>
+    
     <div id="tsparticles"></div>
 
     <div class="main-content">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-effect">
+        <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top glass-effect">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Omarcini</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -190,33 +95,11 @@
             const htmlElement = document.documentElement;
             const moonIcon = themeToggler.querySelector('.bi-moon-stars-fill');
             const sunIcon = themeToggler.querySelector('.bi-sun-fill');
+            // CAMBIO 2: Seleccionamos el navbar
+            const mainNavbar = document.getElementById('mainNavbar'); 
 
-            const particlesConfigLight = {
-                fpsLimit: 120,
-                interactivity: {
-                    events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, },
-                    modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 }, },
-                },
-                particles: {
-                    color: { value: "#212529" },
-                    links: { color: "#212529", distance: 150, enable: true, opacity: 0.4, width: 1 },
-                    move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 2, straight: false, },
-                    number: { density: { enable: true }, value: 80 },
-                    opacity: { value: 0.5 },
-                    shape: { type: "circle" },
-                    size: { value: { min: 1, max: 4 } },
-                },
-                detectRetina: true,
-            };
-
-            const particlesConfigDark = {
-                ...particlesConfigLight, 
-                particles: {
-                    ...particlesConfigLight.particles,
-                    color: { value: "#ffffff" },
-                    links: { ...particlesConfigLight.particles.links, color: "#ffffff" },
-                },
-            };
+            const particlesConfigLight = { fpsLimit: 120, interactivity: { events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, }, modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 }, }, }, particles: { color: { value: "#212529" }, links: { color: "#212529", distance: 150, enable: true, opacity: 0.4, width: 1 }, move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 2, straight: false, }, number: { density: { enable: true }, value: 80 }, opacity: { value: 0.5 }, shape: { type: "circle" }, size: { value: { min: 1, max: 4 } }, }, detectRetina: true, };
+            const particlesConfigDark = { ...particlesConfigLight, particles: { ...particlesConfigLight.particles, color: { value: "#ffffff" }, links: { ...particlesConfigLight.particles.links, color: "#ffffff" }, }, };
 
             const loadParticles = (theme) => {
                 const config = theme === 'dark' ? particlesConfigDark : particlesConfigLight;
@@ -226,12 +109,19 @@
             const applyTheme = (theme) => {
                 htmlElement.setAttribute('data-bs-theme', theme);
                 loadParticles(theme);
+                
                 if (theme === 'dark') {
                     moonIcon.classList.add('d-none');
                     sunIcon.classList.remove('d-none');
+                    // CAMBIO 3: Añadimos la clase para texto claro y quitamos la de texto oscuro
+                    mainNavbar.classList.add('navbar-dark');
+                    mainNavbar.classList.remove('navbar-light');
                 } else {
                     moonIcon.classList.remove('d-none');
                     sunIcon.classList.add('d-none');
+                    // CAMBIO 4: Añadimos la clase para texto oscuro y quitamos la de texto claro
+                    mainNavbar.classList.add('navbar-light');
+                    mainNavbar.classList.remove('navbar-dark');
                 }
             };
             

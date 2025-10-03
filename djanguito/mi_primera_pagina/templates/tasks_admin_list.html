@@ -1,22 +1,22 @@
-{%extends "mi_primera_pagina/html/base.html"%}
+{% extends "mi_primera_pagina/html/base.html" %}
 
-{%block content%}
-
-<h1>Task Admin List</h1>
-
-<ul class="list-group">
-
-    {% for task in tasks %}
-    <li class="list-group-item">
-        {{task.title}}<span class="text-muted">({{task.created_at}})</span>
-    </li>
-
-    {% empty %}
-    <li class="list-group-item-muted">No tasks created in admin</li>
-
-    {% endfor %}
-
-</ul>
-
-<a href="/admin/" class="btn btn-secondary mt-3">Go to Admin</a>
-{%endblock%}
+{% block content %}
+<div class="card glass-effect">
+    <div class="card-body p-4">
+        <h1 class="text-center mb-4">Task Admin List</h1>
+        <ul class="list-group list-group-flush">
+            {% for task in tasks %}
+            <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                {{ task.title }}
+                <span class="badge bg-secondary rounded-pill">{{ task.created_at|date:"d M, Y" }}</span>
+            </li>
+            {% empty %}
+            <li class="list-group-item bg-transparent text-muted text-center">No tasks created in admin</li>
+            {% endfor %}
+        </ul>
+        <div class="text-center mt-4">
+            <a href="/admin/" class="btn btn-outline-light">Ir a Admin</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

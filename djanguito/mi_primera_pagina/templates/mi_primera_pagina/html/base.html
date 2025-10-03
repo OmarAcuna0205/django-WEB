@@ -48,6 +48,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'suma' 10 20 %}">Suma (Ejemplo)</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'saludo' 'Amigo' %}">Saludo (Ejemplo)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'tasks_menu' %}">Menú de Tareas</a></li>
                     </ul>
                     <div class="ms-auto d-flex align-items-center">
                         <span id="theme-toggler" class="theme-toggler text-warning">
@@ -90,7 +91,6 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
     
     <script>
-        // SCRIPT (sin cambios)
         document.addEventListener('DOMContentLoaded', async () => {
             const themeToggler = document.getElementById('theme-toggler');
             const htmlElement = document.documentElement;
@@ -98,7 +98,27 @@
             const sunIcon = themeToggler.querySelector('.bi-sun-fill');
             const mainNavbar = document.getElementById('mainNavbar'); 
 
-            const particlesConfigLight = { fpsLimit: 120, interactivity: { events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, }, modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 }, }, }, particles: { color: { value: "#212529" }, links: { color: "#212529", distance: 150, enable: true, opacity: 0.4, width: 1 }, move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 2, straight: false, }, number: { density: { enable: true }, value: 80 }, opacity: { value: 0.5 }, shape: { type: "circle" }, size: { value: { min: 1, max: 4 } }, }, detectRetina: true, };
+            const particlesConfigLight = { 
+                fpsLimit: 120, 
+                interactivity: { 
+                    events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, }, 
+                    modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 }, }, 
+                }, 
+                particles: { 
+                    color: { value: "#212529" }, 
+                    links: { color: "#212529", distance: 150, enable: true, opacity: 0.4, width: 1 }, 
+                    move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 2, straight: false, }, 
+                    number: { 
+                        density: { enable: true }, 
+                        // ========= NÚMERO DE PARTÍCULAS AUMENTADO AQUÍ =========
+                        value: 160 
+                    }, 
+                    opacity: { value: 0.5 }, 
+                    shape: { type: "circle" }, 
+                    size: { value: { min: 1, max: 4 } }, 
+                }, 
+                detectRetina: true, 
+            };
             const particlesConfigDark = { ...particlesConfigLight, particles: { ...particlesConfigLight.particles, color: { value: "#ffffff" }, links: { ...particlesConfigLight.particles.links, color: "#ffffff" }, }, };
 
             const loadParticles = (theme) => {

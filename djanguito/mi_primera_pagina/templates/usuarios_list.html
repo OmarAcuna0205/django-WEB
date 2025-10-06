@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios</title>
-</head>
-<body>
-    <h1>Lista de Usuarios</h1>
+{% extends "mi_primera_pagina/html/base.html" %}
 
-    <ul>
-        {% for usuario in usuarios %}
-            <li>{{ usuario.nombre }} - {{ usuario.edad }} años</li>
-        {% empty %}
-            <li>No hay usuarios registrados.</li>
-        {% endfor %}
-    </ul>
-    
-</body>
-</html>
+{% block content %}
+<div class="card glass-effect">
+    <div class="card-body p-4">
+        <h1 class="mb-4 text-center">Lista de Usuarios</h1>
+        <ul class="list-group list-group-flush">
+            {% for usuario in usuarios %}
+                <li class="list-group-item bg-transparent text-center">{{ usuario.nombre }} - {{ usuario.edad }} años</li>
+            {% empty %}
+                <li class="list-group-item text-muted text-center bg-transparent">No hay usuarios registrados.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

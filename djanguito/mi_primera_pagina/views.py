@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from .models import Task
+from .models import Task, Usuario
+
 tasks = ["foo", "bar", "baz"]
 
 def index (request):
@@ -44,3 +45,9 @@ def tasks_admin_list (request):
 
 def index2 (request): 
     return render(request, "index2.html")
+
+def usuarios_list(request):
+    usuarios = Usuario.objects.all()
+    return render(request, "usuarios_list.html", {
+        "usuarios": usuarios
+    })
